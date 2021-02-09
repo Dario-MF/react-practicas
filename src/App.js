@@ -1,24 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import '../node_modules/materialize-css/dist/css/materialize.min.css';
+import Card from './card';
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <div className="App">
+        <div className="parallax-container">
+          <div className="parallax"><img src="https://materializecss.com/images/parallax1.jpg" /></div>
+        </div>
+        <div className="section white">
+          <p>efecto parallax</p>
+        </div>
+        <div className="parallax-container">
+          <div className="parallax"><img src="https://materializecss.com/images/parallax2.jpg" /></div>
+        </div>
+      </div>
+      <div className="row">
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+      </div>
+
+    </>
   );
 }
 
