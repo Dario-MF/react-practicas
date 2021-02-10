@@ -1,32 +1,57 @@
-import '../node_modules/materialize-css/dist/css/materialize.min.css';
+import React from 'react';
+import Parallax from './Parallax';
 import Card from './card';
 
+const cards = [
+  {
+      image:"https://picsum.photos/100/100",
+      title: "Paris",
+      description: "I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively."
+  },{
+      image:"https://picsum.photos/100/100",
+      title: "Roma",
+      description: "I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively."
+  },{
+      image:"https://picsum.photos/100/100",
+      title: "New York",
+      description: "I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively."
+  },{
+      image:"https://picsum.photos/100/100",
+      title: "Amsterdam",
+      description: "I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively."
+  },{
+      image:"https://picsum.photos/100/100",
+      title: "Dubai",
+      description: "I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively."
+  },{
+      image:"https://picsum.photos/100/100",
+      title: "Ibiza",
+      description: "I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively."
+  },{
+    image:"https://picsum.photos/100/100",
+    title: "Amsterdam",
+    description: "I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively."
+  },{
+    image:"https://picsum.photos/100/100",
+    title: "Dubai",
+    description: "I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively."
+}
+]
 
 function App() {
   return (
     <>
-      <div className="App">
-        <div className="parallax-container">
-          <div className="parallax"><img src="https://materializecss.com/images/parallax1.jpg" /></div>
-        </div>
-        <div className="section white">
-          <p>efecto parallax</p>
-        </div>
-        <div className="parallax-container">
-          <div className="parallax"><img src="https://materializecss.com/images/parallax2.jpg" /></div>
-        </div>
-      </div>
+      <Parallax />
       <div className="row">
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
+        {
+          cards.map(c => <Card image={c.image} title={c.title} description={c.description}  />)
+        }
       </div>
-
     </>
   );
 }
+
+
+
 
 export default App;
