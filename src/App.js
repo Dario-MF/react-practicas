@@ -1,6 +1,7 @@
 import React from 'react';
 import Parallax from './Parallax';
 import Card from './card';
+import Formulario from './Formulario';
 
 const cards = [
   {
@@ -43,10 +44,11 @@ function App() {
     <>
       <Parallax />
       <div className="row">
-        {
-          cards.map(c => <Card image={c.image} title={c.title} description={c.description}  />)
-        }
+        <div className="col s10 offset-s1">
+           {cards.map(c => <Card image={c.image} title={c.title} description={c.description}  />)}
+        </div>
       </div>
+      <Formulario />
     </>
   );
 }
