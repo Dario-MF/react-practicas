@@ -2,7 +2,7 @@ import '../node_modules/materialize-css/dist/css/materialize.min.css';
 import  React, {Component} from 'react';
 
 
-class Formulario extends Component{
+class Form extends Component{
 
     constructor(props){
         super(props)
@@ -91,4 +91,4 @@ class Formulario extends Component{
 
 }
 
-export default Formulario
+export default Form

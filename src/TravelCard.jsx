@@ -2,7 +2,7 @@ import '../node_modules/materialize-css/dist/css/materialize.min.css';
 import React from "react";
 import { Link } from 'react-router-dom';
 
-const Card = ( {id, image, title, description})=> (   
+const TravelCard = ( {id, image, title, description})=> (   
     <div className="col s4">
          <div>
              <div className="card">
@@ -23,4 +23,4 @@ const Card = ( {id, image, title, description})=> (
      </div>
 )
 
-export default Card
+export default TravelCard

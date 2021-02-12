@@ -2,7 +2,7 @@ import '../node_modules/materialize-css/dist/css/materialize.min.css';
 import React from 'react';
 
 
-const Parallax = () => (
+const Banner = () => (
     <div className="">
         <div className="row">
             <img className="responsive-img" src="https://blog.vanwoow.es/wp-content/uploads/2019/06/woow-travellers.jpg" alt="imagen principal" />
@@ -13,4 +13,4 @@ const Parallax = () => (
     </div>
 );
 
-export default Parallax
+export default Banner

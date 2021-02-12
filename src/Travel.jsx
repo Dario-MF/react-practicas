@@ -59,7 +59,7 @@ const cards = [
 ]
 
 
-const Viaje = ({match}) => {
+const Travel = ({match}) => {
     
     const viajeActual = cards.filter(c => c.id === parseInt(match.params.id))[0]
 
@@ -78,4 +78,4 @@ const Viaje = ({match}) => {
    
 
 
-export default Viaje
+export default Travel

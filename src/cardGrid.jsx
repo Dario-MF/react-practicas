@@ -1,7 +1,7 @@
 
 import '../node_modules/materialize-css/dist/css/materialize.min.css';
 import React from 'react';
-import Card from './card';
+import TravelCard from './TravelCard';
 
 const cards = [
     {
@@ -65,7 +65,7 @@ const CardGrid = () => (
     <div className="row">
         <div className="col s10 offset-s1">
             {cards.map(c =>(
-                <Card
+                <TravelCard
                 key={c.id}
                 id={c.id}
                 image={c.image}
