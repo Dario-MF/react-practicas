@@ -1,17 +1,17 @@
-import '../node_modules/materialize-css/dist/css/materialize.min.css';
-import  React, {Component} from 'react';
+import '../../../node_modules/materialize-css/dist/css/materialize.min.css'
+import React, { Component } from 'react';
 
 
-class Form extends Component{
+class Form extends Component {
 
-    constructor(props){
+    constructor(props) {
         super(props)
 
         //this.state almacena informacion del estado actual.
         this.state = {
             firstName: '',
             lastName: '',
-            email:'',
+            email: '',
             date: new Date()
         }
 
@@ -21,34 +21,34 @@ class Form extends Component{
         this.changeDate = this.changeDate.bind(this)
     }
 
-    changeFirstName(e){
+    changeFirstName(e) {
         // <setState> es un metodo para actualizar el estado, no se puede modificar directamente hay que usar este metodo.
         this.setState({
             firstName: e.target.value
         })
     }
-    changeLastName(e){
+    changeLastName(e) {
         this.setState({
             lastName: e.target.value
         })
     }
-    changeEmail(e){
+    changeEmail(e) {
         this.setState({
             email: e.target.value
         })
     }
-    changeDate(){
+    changeDate() {
         this.setState({
             date: new Date()
         })
     }
 
-    render(){
+    render() {
         return (
             <div className="row">
                 <form className="col s10 offset-s1" id="formulario">
                     <h3>Formulario</h3>
-                    <h4>{Math.ceil(this.state.date/1000)}</h4>
+                    <h4>{Math.ceil(this.state.date / 1000)}</h4>
                     <div className="row">
                         <div className="input-field col s6">
                             <input id="first_name" type="text" className="validate" onChange={this.changeFirstName} />
@@ -58,7 +58,7 @@ class Form extends Component{
                             <input id="last_name" type="text" className="validate" onChange={this.changeLastName} />
                             <label for="last_name">Apellidos</label>
                         </div>
-                    </div>       
+                    </div>
                     <div className="row">
                         <div className="input-field col s12">
                             <input id="email" type="email" className="validate" onChange={this.changeEmail} />
@@ -70,22 +70,22 @@ class Form extends Component{
                     <h3>{`Hola ${this.state.firstName} ${this.state.lastName}`}</h3>
                     <h3>{`Tu correo es: ${this.state.email}`}</h3>
                 </div>
-                
+
             </div>
         )
     }
     //componente que se usa depues del renderizado en el DOM
-    componentDidMount(){
-        this.intervalDate = setInterval(()=>{
+    componentDidMount() {
+        this.intervalDate = setInterval(() => {
             this.changeDate()
-        },1000)
+        }, 1000)
     }
 
     //componente para acceder a las props previas y el stado previo.
-    componentDidUpdate(prevProps, prevState){}
+    componentDidUpdate(prevProps, prevState) { }
 
     //componente para desmontar intervalos y reducir el peso de react.
-    componentWillUnmount(){
+    componentWillUnmount() {
         clearInterval(this.intervalDate)
     }
 
