@@ -1,57 +1,33 @@
 import React from 'react';
 import Parallax from './Parallax';
-import Card from './card';
+import Card from './Card';
 import Formulario from './Formulario';
+import CardGrid from './cardGrid';
+import Viaje from "./Viaje";
+import MainMenu from './MainMenu'
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 
-const cards = [
-  {
-      image:"https://picsum.photos/100/100",
-      title: "Paris",
-      description: "I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively."
-  },{
-      image:"https://picsum.photos/100/100",
-      title: "Roma",
-      description: "I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively."
-  },{
-      image:"https://picsum.photos/100/100",
-      title: "New York",
-      description: "I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively."
-  },{
-      image:"https://picsum.photos/100/100",
-      title: "Amsterdam",
-      description: "I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively."
-  },{
-      image:"https://picsum.photos/100/100",
-      title: "Dubai",
-      description: "I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively."
-  },{
-      image:"https://picsum.photos/100/100",
-      title: "Ibiza",
-      description: "I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively."
-  },{
-    image:"https://picsum.photos/100/100",
-    title: "Amsterdam",
-    description: "I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively."
-  },{
-    image:"https://picsum.photos/100/100",
-    title: "Dubai",
-    description: "I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively."
-}
-]
 
-function App() {
-  return (
-    <>
-      <Parallax />
-      <div className="row">
-        <div className="col s10 offset-s1">
-           {cards.map(c => <Card image={c.image} title={c.title} description={c.description}  />)}
-        </div>
-      </div>
-      <Formulario />
-    </>
-  );
-}
+const App =() => (
+  <Router>
+    <MainMenu />
+    <Switch>
+      <Route path="/" exact component = { Parallax } />
+      <Route path="/viajes/:id" component = { Viaje } />
+      <Route path="/viajes" component = { CardGrid } />
+      <Route path="/formulario" component = { Formulario } />
+      <Route component = {()=>(
+        <>
+          <h1>Error 404</h1>
+          <span>página no encontrada</span>
+        </>
+      )} />
+    </Switch>  
+  </Router>
+)
+  
+
+
 
 
 
