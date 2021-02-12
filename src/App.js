@@ -1,6 +1,6 @@
 import React from 'react';
 import Parallax from './Parallax';
-import Card from './card';
+import card from './card';
 import Formulario from './Formulario';
 import CardGrid from './cardGrid';
 import Viaje from "./Viaje";

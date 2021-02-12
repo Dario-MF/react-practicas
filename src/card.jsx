@@ -1,22 +1,26 @@
 import '../node_modules/materialize-css/dist/css/materialize.min.css';
 import React from "react";
+import { Link } from 'react-router-dom';
 
-const Card = ({key, id, image, title, descrption})=> (
-    </div>    
-    <div className="col s3">
+const Card = ( {id, image, title, description})=> (   
+    <div className="col s4">
          <div>
              <div className="card">
                  <div className="card-image">
-                     <img src={image} />
-                     <span className="card-title">{title}</span>
+                    <Link to={`/viajes/${String(id)}`}>
+                        <img src={image} />
+                        <span className="card-title">{title}</span>
+                    </Link>      
                  </div>
                  <div className="card-content">
                      <p>{description}</p>
                  </div>
                  <div className="card-action">
-                     <a href="#">This is a link</a>
+                     <Link to={`/viajes${id}`} className=" cyan-text text-darken-2">Más información</Link>
                  </div>
              </div>
          </div>
      </div>
 )
+
+export default Card
