@@ -1,24 +1,13 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios'
+import React from 'react';
 import TravelInfo from '../molecules/TravelInfo';
+import useFetch from '../customHooks/useFetch';
 
 
 const Travel = ({ match }) => {
-    const [infoTravel, setInfoTravel] = useState({
-        card: []
-    })
 
-    useEffect(() => {
-        axios.get(`https://my-json-server.typicode.com/Dario-MF/fakedata/cards/${match.params.id}`)
-            .then(response => setInfoTravel({
-                card: response.data
-            }))
-    }, [])
+    const info = useFetch(`https://my-json-server.typicode.com/Dario-MF/fakedata/cards/${match.params.id}`, [])
 
-    const { card } = infoTravel
-    return <TravelInfo card={card} />
-
+    return <TravelInfo card={info.data} />
 }
-
 
 export default Travel
