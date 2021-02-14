@@ -1,4 +1,5 @@
 import react from 'react'
+import widthLoader from '../HOC/withLoader'
 import UserCard from '../molecules/UserCard'
 
 const UserGrid = ({ users }) => (
@@ -21,4 +22,4 @@ const UserGrid = ({ users }) => (
 
 )
 
-export default UserGrid
+export default widthLoader('users')(UserGrid)

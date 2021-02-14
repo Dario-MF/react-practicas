@@ -1,13 +1,12 @@
-import React from 'react';
-import TravelCard from './molecules/TravelCard';
-import Form from './pages/Form';
-import Travels from './pages/Travels';
-import Travel from "./pages/Travel";
+import React from 'react'
+import Form from './pages/Form'
+import Travel from "./pages/Travel"
+import Travels from './pages/Travels'
 import MainMenu from './organism/MainMenu'
 import History from './pages/History'
 import Home from './pages/Home'
 import Users from './pages/Users'
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
 
 const App = () => (

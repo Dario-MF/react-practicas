@@ -1,6 +1,4 @@
-import '../../../node_modules/materialize-css/dist/css/materialize.min.css'
 import React, { Component } from 'react'
-import UserCard from '../molecules/UserCard'
 import UserGrid from '../organism/UserGrid'
 import axios from 'axios'
 

@@ -1,4 +1,3 @@
-import '../../../node_modules/materialize-css/dist/css/materialize.min.css'
 import React from "react";
 import { Link, NavLink } from 'react-router-dom';
 import Logo from '../../img/agencia-viajes-md-travel-logotipo.png'

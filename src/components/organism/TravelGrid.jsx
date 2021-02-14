@@ -1,6 +1,6 @@
-import '../../../node_modules/materialize-css/dist/css/materialize.min.css'
 import React, { Component } from 'react';
 import TravelCard from '../molecules/TravelCard';
+import widthLoader from '../HOC/withLoader';
 
 const TravelGrid = ({ cards }) => (
     <div className="row">
@@ -18,4 +18,4 @@ const TravelGrid = ({ cards }) => (
     </div>
 )
 
-export default TravelGrid
+export default widthLoader('cards')(TravelGrid)

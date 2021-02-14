@@ -1,13 +1,9 @@
-
-import '../../../node_modules/materialize-css/dist/css/materialize.min.css'
 import React, { Component } from 'react';
-import TravelCard from '../molecules/TravelCard';
 import axios from 'axios'
 import TravelGrid from '../organism/TravelGrid';
 
 
 class CardGrid extends Component {
-
     constructor(props) {
         super(props)
 
@@ -23,10 +19,8 @@ class CardGrid extends Component {
                 })
             })
     }
-
     render() {
         const { cards } = this.state
-
         return <TravelGrid cards={cards} />
     }
 }
