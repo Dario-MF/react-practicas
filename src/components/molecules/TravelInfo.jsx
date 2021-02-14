@@ -1,6 +1,7 @@
 import React from 'react';
 import widthLoader from '../HOC/withLoader'
 
+
 const TravelInfo = ({ card }) => {
     return (
         <div className="row" >
@@ -13,4 +14,4 @@ const TravelInfo = ({ card }) => {
     )
 }
 
-export default widthLoader('card')(TravelInfo)
+export default widthLoader('card')(TravelInfo) 

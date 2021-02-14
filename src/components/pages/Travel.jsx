@@ -1,27 +1,23 @@
-import React, { Component } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios'
 import TravelInfo from '../molecules/TravelInfo';
 
 
-class Travel extends Component {
-    constructor(props) {
-        super(props)
-        this.state = {
-            card: []
-        }
-    }
-    componentDidMount() {
-        axios.get(`https://my-json-server.typicode.com/Dario-MF/fakedata/cards/${this.props.match.params.id}`)
-            .then(response => {
-                this.setState({
-                    card: response.data
-                })
-            })
-    }
-    render() {
-        const { card } = this.state
-        return <TravelInfo card={card} />
-    }
+const Travel = ({ match }) => {
+    const [infoTravel, setInfoTravel] = useState({
+        card: []
+    })
+
+    useEffect(() => {
+        axios.get(`https://my-json-server.typicode.com/Dario-MF/fakedata/cards/${match.params.id}`)
+            .then(response => setInfoTravel({
+                card: response.data
+            }))
+    }, [])
+
+    const { card } = infoTravel
+    return <TravelInfo card={card} />
+
 }
 
 
