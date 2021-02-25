@@ -1,7 +1,9 @@
 import React from "react";
 import { Link } from 'react-router-dom';
+import { addToCart } from '../redux/actionsCreators'
+import { connect } from 'react-redux'
 
-const TravelCard = ({ id, image, title, description }) => (
+const TravelCard = ({ id, image, title, description, travelAddToCart, cart }) => (
     <div className="col s4">
         <div>
             <div className="card">
@@ -15,11 +17,29 @@ const TravelCard = ({ id, image, title, description }) => (
                     <p>{description}</p>
                 </div>
                 <div className="card-action">
-                    <Link to={`/viajes${id}`} className=" cyan-text text-darken-2">Más información</Link>
+                    <button onClick={() => travelAddToCart(String(id))}>
+                        {
+                            cart.find(i => i === String(id))
+                                ? 'Producto añadido'
+                                : 'Añadir al Carrito'
+                        }
+                    </button>
                 </div>
             </div>
         </div>
     </div>
 )
 
-export default TravelCard
+const mapStateToProps = state => ({
+    cart: state.cart
+})
+
+
+const mapDispatchToProps = dispatch => ({
+    travelAddToCart(id) {
+        dispatch(addToCart(id))
+    }
+})
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(TravelCard)

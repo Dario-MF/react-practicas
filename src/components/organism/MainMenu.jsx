@@ -1,6 +1,7 @@
 import React from "react";
 import { Link, NavLink } from 'react-router-dom';
 import Logo from '../../img/agencia-viajes-md-travel-logotipo.png'
+import CartCounter from '../atoms/CartCounter'
 
 const MainMenu = () => (
     <nav>
@@ -13,6 +14,7 @@ const MainMenu = () => (
                 <li><NavLink to="/viajes" activeClassName="active">Viajes</NavLink></li>
                 <li><NavLink to="/formulario" activeClassName="active">Formulario</NavLink></li>
                 <li><NavLink to="/usuarios" activeClassName="active">Usuarios</NavLink></li>
+                <li><CartCounter /></li>
             </ul>
         </div>
     </nav>
